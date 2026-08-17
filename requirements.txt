@@ -1,3 +1,2 @@
 yfinance
 trafilatura
-mistralai
