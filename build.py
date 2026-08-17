@@ -24,7 +24,7 @@ from pathlib import Path
 # --------------------------------------------------------------------------
 
 RACINE = Path(__file__).parent
-CONFIG = RACINE / "config" / "fonds.json"
+CONFIG = RACINE / "fonds.json"
 DOSSIER_LIENS = RACINE / "liens"
 DOSSIER_SITE = RACINE / "site"
 CACHE = RACINE / ".cache"
