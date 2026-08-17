@@ -1,0 +1,22 @@
+{
+  "ia": {
+    "nom": "Fonds IA",
+    "description": "Semi-conducteurs, hyperscalers et infrastructure de l'intelligence artificielle",
+    "titres": [
+      { "nom": "APPLE",               "ticker": "AAPL",      "poids": 8.0 },
+      { "nom": "MICROSOFT",           "ticker": "MSFT",      "poids": 10.0 },
+      { "nom": "AMAZON.COM",          "ticker": "AMZN",      "poids": 8.0 },
+      { "nom": "ALPHABET-C",          "ticker": "GOOG",      "poids": 8.0 },
+      { "nom": "META PLATFORMS",      "ticker": "META",      "poids": 7.0 },
+      { "nom": "NVIDIA",              "ticker": "NVDA",      "poids": 12.0 },
+      { "nom": "TESLA",               "ticker": "TSLA",      "poids": 5.0 },
+      { "nom": "SPACEX",              "ticker": "SPCX",          "poids": 3.0 },
+      { "nom": "BROADCOM",            "ticker": "AVGO",      "poids": 8.0 },
+      { "nom": "TSMC",                "ticker": "TSM",       "poids": 9.0 },
+      { "nom": "AMD",                 "ticker": "AMD",       "poids": 6.0 },
+      { "nom": "SK HYNIX INC.",       "ticker": "000660.KS", "poids": 6.0 },
+      { "nom": "SAMSUNG ELECTRONICS", "ticker": "005930.KS", "poids": 6.0 },
+      { "nom": "ORACLE",              "ticker": "ORCL",      "poids": 4.0 }
+    ]
+  }
+}

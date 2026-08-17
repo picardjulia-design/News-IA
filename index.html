@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veille hebdomadaire</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bandeau">
+  <div class="contenu bandeau-interieur">
+    <div class="marque">
+      <span class="marque-nom">CPR AM</span>
+      <span class="marque-trait"></span>
+      <span class="marque-sous">Veille hebdomadaire</span>
+    </div>
+    <div class="genere" id="genere"></div>
+  </div>
+</header>
+
+<nav class="barre">
+  <div class="contenu barre-interieur">
+    <div class="onglets" id="onglets"></div>
+    <label class="selecteur">
+      <span>Semaine</span>
+      <select id="semaines"></select>
+    </label>
+  </div>
+</nav>
+
+<main class="contenu">
+  <section class="intro">
+    <h1 id="titre-fonds"></h1>
+    <p id="desc-fonds"></p>
+    <div class="synthese" id="synthese"></div>
+  </section>
+
+  <div id="valeurs"></div>
+
+  <p class="pied">
+    Document de travail interne. Les resumes sont produits automatiquement a
+    partir des sources listees sous chaque valeur et doivent etre relus avant
+    toute diffusion.
+  </p>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

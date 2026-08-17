@@ -1,0 +1,330 @@
+/* ---------------------------------------------------------------------------
+   Palette. Ajuste ces six valeurs pour coller exactement a la charte interne
+   que tu as sous la main : tout le site en decoule.
+   --------------------------------------------------------------------------- */
+:root {
+  --nuit:      #0E2745;   /* bleu principal CPR AM, bandeau et titres        */
+  --nuit-clair:#1C3E64;   /* bleu secondaire, sous-titres et bordures        */
+  --accent:    #009BDE;   /* bleu vif, liens et element actif                */
+  --hausse:    #0F8B6C;
+  --baisse:    #C0392B;
+  --papier:    #F2F5F8;   /* fond de page                                    */
+
+  --blanc: #FFFFFF;
+  --texte: #23303D;
+  --gris:  #6B7A89;
+  --trait: #DDE4EB;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--texte);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contenu {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* --- Bandeau ------------------------------------------------------------- */
+
+.bandeau {
+  background: var(--nuit);
+  color: var(--blanc);
+}
+
+.bandeau-interieur {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.marque { display: flex; align-items: center; gap: 14px; }
+
+.marque-nom {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.marque-trait {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.marque-sous {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.genere {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Barre de navigation ------------------------------------------------- */
+
+.barre {
+  background: var(--blanc);
+  border-bottom: 1px solid var(--trait);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.barre-interieur {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.onglets { display: flex; gap: 4px; flex-wrap: wrap; }
+
+.onglet {
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 14px;
+  color: var(--gris);
+  padding: 16px 4px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s;
+}
+
+.onglet:hover { color: var(--nuit); }
+
+.onglet[aria-current="true"] {
+  color: var(--nuit);
+  font-weight: 600;
+  border-bottom-color: var(--accent);
+}
+
+.selecteur {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gris);
+}
+
+.selecteur select {
+  font: inherit;
+  font-size: 13.5px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--texte);
+  padding: 6px 10px;
+  border: 1px solid var(--trait);
+  border-radius: 3px;
+  background: var(--blanc);
+  cursor: pointer;
+}
+
+/* --- Intro --------------------------------------------------------------- */
+
+.intro { padding: 44px 0 8px; }
+
+.intro h1 {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--nuit);
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.intro p {
+  margin: 0;
+  color: var(--gris);
+  max-width: 62ch;
+}
+
+.synthese {
+  display: flex;
+  gap: 34px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+  padding: 18px 24px;
+  background: var(--blanc);
+  border-left: 3px solid var(--accent);
+}
+
+.stat-valeur {
+  font-family: var(--serif);
+  font-size: 25px;
+  color: var(--nuit);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--gris);
+}
+
+/* --- Fiche valeur -------------------------------------------------------- */
+
+.valeur {
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+  margin-top: 18px;
+}
+
+.valeur-tete {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--trait);
+}
+
+.valeur-nom {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--nuit);
+  letter-spacing: 0.03em;
+}
+
+.valeur-ticker {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--gris);
+  padding: 2px 7px;
+  background: var(--papier);
+  border-radius: 2px;
+}
+
+.valeur-poids {
+  font-size: 12px;
+  color: var(--gris);
+  margin-left: auto;
+}
+
+.valeur-perf {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hausse { color: var(--hausse); }
+.baisse { color: var(--baisse); }
+.neutre { color: var(--gris); }
+
+.valeur-corps {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 0;
+}
+
+.bloc-cours {
+  padding: 20px 24px;
+  border-right: 1px solid var(--trait);
+  background: linear-gradient(180deg, var(--papier) 0%, var(--blanc) 100%);
+}
+
+.courbe { display: block; width: 100%; height: 54px; margin-bottom: 14px; }
+
+table.cours {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+table.cours td { padding: 3px 0; }
+table.cours td.date { color: var(--gris); }
+table.cours td.prix { text-align: right; }
+table.cours td.var  { text-align: right; width: 68px; }
+
+.bloc-texte { padding: 20px 26px; }
+
+.bloc-texte p {
+  margin: 0 0 14px;
+  font-size: 14.5px;
+  line-height: 1.72;
+}
+
+.vide {
+  color: var(--gris);
+  font-style: italic;
+  font-size: 14px;
+}
+
+.sources {
+  border-top: 1px dotted var(--trait);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.sources-titre {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gris);
+  margin-bottom: 6px;
+}
+
+.sources a {
+  display: block;
+  font-size: 12.5px;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 2px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sources a:hover { text-decoration: underline; }
+
+.pied {
+  margin: 46px 0 60px;
+  padding-top: 18px;
+  border-top: 1px solid var(--trait);
+  font-size: 12px;
+  color: var(--gris);
+  max-width: 70ch;
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .contenu { padding: 0 18px; }
+  .valeur-corps { grid-template-columns: 1fr; }
+  .bloc-cours { border-right: 0; border-bottom: 1px solid var(--trait); }
+  .intro h1 { font-size: 27px; }
+  .barre-interieur { padding-bottom: 12px; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
